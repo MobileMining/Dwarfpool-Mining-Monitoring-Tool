@@ -1,0 +1,9 @@
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\bin\Debug\Dwarfpool Mining Monitoring Tool.exe.config
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\bin\Debug\Dwarfpool Mining Monitoring Tool.exe
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\bin\Debug\Dwarfpool Mining Monitoring Tool.pdb
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csprojResolveAssemblyReference.cache
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool_Mining_Monitoring_Tool.frmMain.resources
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool_Mining_Monitoring_Tool.Properties.Resources.resources
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csproj.GenerateResource.Cache
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.exe
+d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.pdb
