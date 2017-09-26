@@ -26,6 +26,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             }
             catch (PingException e)
             {
+                ;
             }
 
             return false;
