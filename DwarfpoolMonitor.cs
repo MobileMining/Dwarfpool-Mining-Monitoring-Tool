@@ -32,7 +32,6 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             {
                 this.ui.showMessageBox("Failed to connect to the Internet. Please check your Internet connection.",
                     "No Internet Connection", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-
                 return;
             }
 

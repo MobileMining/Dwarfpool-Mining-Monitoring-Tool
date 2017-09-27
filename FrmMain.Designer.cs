@@ -98,6 +98,7 @@
             // txtWalletAddress
             // 
             this.txtWalletAddress.Location = new System.Drawing.Point(144, 12);
+            this.txtWalletAddress.MaxLength = 42;
             this.txtWalletAddress.Name = "txtWalletAddress";
             this.txtWalletAddress.Size = new System.Drawing.Size(216, 20);
             this.txtWalletAddress.TabIndex = 4;
@@ -118,9 +119,11 @@
             // 
             this.txtPhoneNumber.Enabled = false;
             this.txtPhoneNumber.Location = new System.Drawing.Point(114, 68);
+            this.txtPhoneNumber.MaxLength = 13;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(172, 20);
             this.txtPhoneNumber.TabIndex = 6;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblPhoneNumber
             // 

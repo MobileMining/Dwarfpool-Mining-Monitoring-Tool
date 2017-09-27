@@ -17,6 +17,8 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             InitializeComponent();
         }
 
+        private Thread monitorThread;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.btnStop.Enabled = false;
@@ -29,7 +31,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
             DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, "test", "test", 949);
 
-            Thread monitorThread = new Thread(new ThreadStart(monitor.start));
+            monitorThread = new Thread(new ThreadStart(monitor.start));
 
             monitorThread.Start();
 
@@ -37,6 +39,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            monitorThread.Abort();
             stopMonitoringUI();
         }
 
@@ -120,6 +123,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
                 txtEmailAddress.Enabled = true;
             }
 
+            updateStatus("Stopped");
 
         }
 
@@ -142,5 +146,12 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         }
 
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
