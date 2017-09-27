@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 using System.Net.NetworkInformation;
 
 namespace Dwarfpool_Mining_Monitoring_Tool
@@ -50,9 +51,13 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             return ping("google.com");
 
         }
-        public void getHTMLFromWebPage(string address)
+        public string getHTMLFromWebPage(string address)
         {
-            ;
+            WebRequest request = WebRequest.Create(address);
+
+            WebResponse response = request.GetResponse();
+
+            return "";
         }
     }
 }
