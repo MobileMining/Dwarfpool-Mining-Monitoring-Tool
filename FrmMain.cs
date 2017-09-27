@@ -23,8 +23,15 @@ namespace Dwarfpool_Mining_Monitoring_Tool
         }
 
         private void btnStart_Click(object sender, EventArgs e)
-        {
+        {   
+
             startMonitoringUI();
+
+            DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, "test", "test", 949);
+
+            Thread monitorThread = new Thread(new ThreadStart(monitor.start));
+
+            monitorThread.Start();
 
         }
 
