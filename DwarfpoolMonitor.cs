@@ -26,6 +26,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
         public void start()
         {
 
+            // Testing for an Internet connection
             this.ui.updateStatus("Testing for an Internet connection...");
 
             if (!testConnection())
@@ -35,36 +36,81 @@ namespace Dwarfpool_Mining_Monitoring_Tool
                 return;
             }
 
+
+            // Testing that the user gave a valid Dwarfpool address to monitor
             this.ui.updateStatus("Validating Dwarfpool wallet address...");
+
+            if (!validateDwarfpoolAddress("http://dwarfpool.com/eth/address/?wallet=" + this.address))
+            {
+
+                this.ui.showMessageBox("Given Dwarfpool address does not exist on Dwarfpool servers.",
+                    "Invalid Dwarfpool Address", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+            // Get mining statistics
+            this.ui.updateStatus("Pulling current mining statistics...");
+
+            double[] statistics = getStatistics("http://dwarfpool.com/eth/address/?wallet=" + this.address);
+            this.ui.updateStatistics(statistics[0], statistics[1], statistics[2]);
+
+            // Start monitoring loop
+            this.ui.updateStatus("Monitoring");
+            monitor();
+        }
+
+        public bool validateDwarfpoolAddress(string address)
+        {
 
             InternetTools validate = new InternetTools();
 
-            string html = validate.getHTMLFromWebPage("http://dwarfpool.com/eth/address/?wallet=adf6a3cFe5447cF195676B911DeFd68Aa8cf44Eb");
+            string html = validate.getHTMLFromWebPage(address);
 
-            int cutIndex;
+            if (html == " " || html == "invalid wallet")
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public double[] getStatistics(string address)
+        {
+
+            InternetTools webpage = new InternetTools();
+            string html = webpage.getHTMLFromWebPage(address);
 
             // Get current balance
-
-
             html = html.Substring(html.IndexOf(" ETH") - 10);
-
             double currentBalance = Double.Parse(html.Substring(0, 10));
-            
 
             // Get last earnings 24 hours
             html = html.Substring(html.IndexOf(" ETH<br><span style=\"font-size:85%;\">") - 10);
-
             double earningsLast24 = Double.Parse(html.Substring(0, 10));
 
             // Get current price
-            // May change this later to get the price from a different site
+            html = webpage.getHTMLFromWebPage("https://ethereumprice.org");
+            html = html.Substring(html.IndexOf("\"rp\">") + 5);
+            html = html.Substring(0, html.IndexOf("</span>"));
+            double currentPrice = Double.Parse(html);
 
-            html = html.Substring(html.IndexOf("Rates"));
-            html = html.Substring(html.IndexOf("</span>") - 10);
+            // Store all stats in an array of doubles
+            double[] statistics = new double[3];
 
-            double currentPrice = Double.Parse(html.Substring(0, 8));
+            statistics[0] = currentPrice;
+            statistics[1] = currentBalance;
+            statistics[2] = earningsLast24;
 
+            return statistics;
 
+        }
+
+        private void monitor()
+        {
+            ;
         }
 
         private bool testConnection()

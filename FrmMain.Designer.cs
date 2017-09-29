@@ -98,7 +98,7 @@
             // txtWalletAddress
             // 
             this.txtWalletAddress.Location = new System.Drawing.Point(144, 12);
-            this.txtWalletAddress.MaxLength = 42;
+            this.txtWalletAddress.MaxLength = 40;
             this.txtWalletAddress.Name = "txtWalletAddress";
             this.txtWalletAddress.Size = new System.Drawing.Size(216, 20);
             this.txtWalletAddress.TabIndex = 4;

@@ -22,6 +22,8 @@ namespace Dwarfpool_Mining_Monitoring_Tool
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.btnStop.Enabled = false;
+
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
             startMonitoringUI();
 
-            DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, "test", "test", 949);
+            DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, txtWalletAddress.Text, "test", 949);
 
             monitorThread = new Thread(new ThreadStart(monitor.start));
 
@@ -122,6 +124,10 @@ namespace Dwarfpool_Mining_Monitoring_Tool
                 lblEmailAddress.Enabled = true;
                 txtEmailAddress.Enabled = true;
             }
+
+            lblPrice.Text = "Current Price:";
+            lblBalance.Text = "Current Dwarfpool Balance:";
+            lblEarnings.Text = "Earnings in the last 24 hours:";
 
             updateStatus("Stopped");
 
