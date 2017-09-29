@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -56,8 +57,16 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             WebRequest request = WebRequest.Create(address);
 
             WebResponse response = request.GetResponse();
+            Stream data = response.GetResponseStream();
 
-            return "";
+            string html;
+
+            using (StreamReader sr = new StreamReader(data))
+            {
+                html = sr.ReadToEnd();
+            }
+
+            return html;
         }
     }
 }
