@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Dwarfpool_Mining_Monitoring_Tool
 {
@@ -110,7 +111,13 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         private void monitor()
         {
-            ;
+            while (true)
+            {
+                Thread.Sleep(60000);
+
+
+            }
+            
         }
 
         private bool testConnection()

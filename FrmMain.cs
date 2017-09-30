@@ -28,15 +28,22 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         private void btnStart_Click(object sender, EventArgs e)
         {   
+            if (txtWalletAddress.Text == "")
+            {
+                showMessageBox("Please enter an Ethereum wallet address.", "No Ethereum Wallet Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
-            startMonitoringUI();
+                startMonitoringUI();
 
-            DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, txtWalletAddress.Text, "test", 949);
+                DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, txtWalletAddress.Text, "test", 949);
 
-            monitorThread = new Thread(new ThreadStart(monitor.start));
+                monitorThread = new Thread(new ThreadStart(monitor.start));
 
-            monitorThread.Start();
+                monitorThread.Start();
 
+            }
         }
 
         private void btnStop_Click(object sender, EventArgs e)
