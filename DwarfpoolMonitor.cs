@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace Dwarfpool_Mining_Monitoring_Tool
 {
@@ -13,6 +14,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
         private string email;
         private int phone;
         private FrmMain ui;
+        private Miner[] miners;
 
         public DwarfpoolMonitor(FrmMain ui, string address, string email, int phone)
         {
@@ -33,7 +35,8 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             if (!testConnection())
             {
                 this.ui.showMessageBox("Failed to connect to the Internet. Please check your Internet connection.",
-                    "No Internet Connection", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    "No Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.ui.stopMonitoringUI();
                 return;
             }
 
@@ -45,7 +48,8 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             {
 
                 this.ui.showMessageBox("Given Dwarfpool address does not exist on Dwarfpool servers.",
-                    "Invalid Dwarfpool Address", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                    "Invalid Dwarfpool Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.ui.stopMonitoringUI();
                 return;
 
             }
@@ -56,6 +60,27 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
             double[] statistics = getStatistics("http://dwarfpool.com/eth/address/?wallet=" + this.address);
             this.ui.updateStatistics(statistics[0], statistics[1], statistics[2]);
+
+            this.ui.updateStatus("Getting status of each miner...");
+
+            miners = Miner.getMiners(address);
+
+            if (miners == null)
+            {
+
+                DialogResult result = this.ui.showMessageBoxReturnAnswer("There are currently no Dwarfpool miners at the specified wallet" +
+                    "address. Would you like to continue to monitor in case one or more miners comes online?", "No Miners Found",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.No)
+                {
+
+                    this.ui.stopMonitoringUI();
+                    return;
+
+                }
+
+            }
 
             // Start monitoring loop
             this.ui.updateStatus("Monitoring");
@@ -115,6 +140,10 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             {
                 Thread.Sleep(60000);
 
+                // Get mining statistics
+                this.ui.updateStatus("Pulling current mining statistics...");
+                double[] statistics = getStatistics("http://dwarfpool.com/eth/address/?wallet=" + this.address);
+                this.ui.updateStatistics(statistics[0], statistics[1], statistics[2]);
 
             }
             

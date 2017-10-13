@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dwarfpool Ethereum Monitoring Tool", "Dwarfpool Ethereum Monitoring Tool.csproj", "{BBB4E26B-F7D8-4D8A-9328-A2D3437C48AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dwarfpool Mining Monitoring Tool", "Dwarfpool Mining Monitoring Tool.csproj", "{BBB4E26B-F7D8-4D8A-9328-A2D3437C48AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55AD1331-0048-4821-B928-FCBE5A6E63D2}
 	EndGlobalSection
 EndGlobal

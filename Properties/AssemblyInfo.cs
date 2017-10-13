@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Dwarfpool Mining Monitoring Tool")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A simple Dwarfpool ethereum mining tool for Windows that monitors the current status of miners on a Dwarfpool account and sends a notification to a mobile number and/or email address if one or more miners goes down. Also shows current Dwarfpool balance, earnings within the last 24 hours, and current ethereum price.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("David Goguen")]
 [assembly: AssemblyProduct("Dwarfpool Mining Monitoring Tool")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

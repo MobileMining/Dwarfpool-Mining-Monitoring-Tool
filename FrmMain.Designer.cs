@@ -45,6 +45,7 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblEarnings = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.lbl0x = new System.Windows.Forms.Label();
             this.stsStrip.SuspendLayout();
             this.grpStatistics.SuspendLayout();
             this.SuspendLayout();
@@ -97,10 +98,10 @@
             // 
             // txtWalletAddress
             // 
-            this.txtWalletAddress.Location = new System.Drawing.Point(144, 12);
+            this.txtWalletAddress.Location = new System.Drawing.Point(150, 12);
             this.txtWalletAddress.MaxLength = 40;
             this.txtWalletAddress.Name = "txtWalletAddress";
-            this.txtWalletAddress.Size = new System.Drawing.Size(216, 20);
+            this.txtWalletAddress.Size = new System.Drawing.Size(210, 20);
             this.txtWalletAddress.TabIndex = 4;
             // 
             // chkText
@@ -206,11 +207,23 @@
             this.lblBalance.TabIndex = 0;
             this.lblBalance.Text = "Current Dwarfpool balance:";
             // 
+            // lbl0x
+            // 
+            this.lbl0x.AutoSize = true;
+            this.lbl0x.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl0x.Location = new System.Drawing.Point(135, 15);
+            this.lbl0x.Name = "lbl0x";
+            this.lbl0x.Size = new System.Drawing.Size(18, 13);
+            this.lbl0x.TabIndex = 12;
+            this.lbl0x.Text = "0x";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 300);
+            this.Controls.Add(this.txtWalletAddress);
+            this.Controls.Add(this.lbl0x);
             this.Controls.Add(this.grpStatistics);
             this.Controls.Add(this.lblEmailAddress);
             this.Controls.Add(this.txtEmailAddress);
@@ -218,7 +231,6 @@
             this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.chkText);
-            this.Controls.Add(this.txtWalletAddress);
             this.Controls.Add(this.lblWalletAddress);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
@@ -257,6 +269,7 @@
         private System.Windows.Forms.Label lblEarnings;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.TextBox txtWalletAddress;
+        private System.Windows.Forms.Label lbl0x;
     }
 }
 

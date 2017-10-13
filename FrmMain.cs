@@ -23,11 +23,13 @@ namespace Dwarfpool_Mining_Monitoring_Tool
         {
             this.btnStop.Enabled = false;
 
+            // Only doing this for debugging purposes; will implement proper cross-thread calls later
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
-        {   
+        {
+
             if (txtWalletAddress.Text == "")
             {
                 showMessageBox("Please enter an Ethereum wallet address.", "No Ethereum Wallet Address", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,7 +56,13 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         private void chkText_CheckedChanged(object sender, EventArgs e)
         {
+            if (chkText.Checked)
+            {
+                MessageBox.Show("This feature has not been implemented yet.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                chkText.Checked = false;
+                return;
 
+            }
             if (chkText.Checked)
             {
 
@@ -156,6 +164,15 @@ namespace Dwarfpool_Mining_Monitoring_Tool
         {
 
             MessageBox.Show(message, title, buttons, icon);
+
+        }
+
+        public DialogResult showMessageBoxReturnAnswer(string message, string title, MessageBoxButtons buttons, MessageBoxIcon icon)
+        {
+
+            DialogResult result = MessageBox.Show(message, title, buttons, icon);
+
+            return result;
 
         }
 

@@ -7,3 +7,22 @@ d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring
 d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csproj.GenerateResource.Cache
 d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.exe
 d:\users\david\documents\visual studio 2017\Projects\Dwarfpool Mining Monitoring Tool\Dwarfpool Mining Monitoring Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.pdb
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Dwarfpool Mining Monitoring Tool.exe.config
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Dwarfpool Mining Monitoring Tool.exe
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Dwarfpool Mining Monitoring Tool.pdb
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Newtonsoft.Json.dll
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Twilio.dll
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Newtonsoft.Json.xml
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\bin\Debug\Twilio.xml
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool_Mining_Monitoring_Tool.FrmMain.resources
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool_Mining_Monitoring_Tool.Properties.Resources.resources
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csproj.GenerateResource.Cache
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csproj.CoreCompileInputs.cache
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.exe
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.pdb
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csprojResolveAssemblyReference.cache
