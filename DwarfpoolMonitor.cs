@@ -12,11 +12,11 @@ namespace Dwarfpool_Mining_Monitoring_Tool
     {
         private string address;
         private string email;
-        private int phone;
+        private string phone;
         private FrmMain ui;
         private Miner[] miners;
 
-        public DwarfpoolMonitor(FrmMain ui, string address, string email, int phone)
+        public DwarfpoolMonitor(FrmMain ui, string address, string email, string phone)
         {
 
             this.ui = ui;
@@ -184,7 +184,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
                             else
                             {
 
-                                minersDown += ", " + miners[i].getName();
+                                minersDown += "," + miners[i].getName();
 
                             }
                         }
@@ -254,6 +254,14 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             }
 
             this.ui.showMinerDownNotification(title, message);
+
+            if (phone != null)
+            {
+
+                SMSSender sms = new SMSSender(phone, "Dwarfpool Mining Monitoring Tool: \n\n" + message);
+                sms.send();
+
+            }
 
         }
 
