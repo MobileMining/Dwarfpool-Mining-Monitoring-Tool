@@ -27,6 +27,13 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
             TwilioClient.Init(sid, token);
 
+            PhoneNumber numberTo = new PhoneNumber(number);
+            PhoneNumber numberFrom = new PhoneNumber("+16476944123");
+
+            MessageResource.Create(to: numberTo, from: numberFrom, body: message);
+
+
+
         }
     }
 }

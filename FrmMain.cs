@@ -40,7 +40,24 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
                 startMonitoringUI();
 
-                DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, txtWalletAddress.Text, "test", 949);
+                string phoneNumber = null;
+                string email = null;
+
+                if (chkEmail.Checked)
+                {
+
+                    email = txtEmailAddress.Text;
+
+                }
+
+                if (chkText.Checked)
+                {
+
+                    phoneNumber = txtPhoneNumber.Text;
+
+                }
+
+                DwarfpoolMonitor monitor = new DwarfpoolMonitor(this, txtWalletAddress.Text, email, phoneNumber);
 
                 monitorThread = new Thread(new ThreadStart(monitor.start));
 
@@ -57,13 +74,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         private void chkText_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkText.Checked)
-            {
-                MessageBox.Show("This feature has not been implemented yet.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                chkText.Checked = false;
-                return;
 
-            }
             if (chkText.Checked)
             {
 
@@ -104,6 +115,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             btnStart.Enabled = false;
             grpStatistics.Enabled = true;
             lblWalletAddress.Enabled = false;
+            lbl0x.Enabled = false;
             txtWalletAddress.Enabled = false;
             chkText.Enabled = false;
             chkEmail.Enabled = false;
@@ -122,6 +134,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             btnStart.Enabled = true;
             grpStatistics.Enabled = false;
             lblWalletAddress.Enabled = true;
+            lbl0x.Enabled = true;
             txtWalletAddress.Enabled = true;
             chkText.Enabled = true;
             chkEmail.Enabled = true;
