@@ -136,17 +136,125 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         private void monitor()
         {
+            bool firstRun = true;
+
             while (true)
-            {
+            {   
+
                 Thread.Sleep(60000);
 
                 // Get mining statistics
-                this.ui.updateStatus("Pulling current mining statistics...");
                 double[] statistics = getStatistics("http://dwarfpool.com/eth/address/?wallet=" + this.address);
                 this.ui.updateStatistics(statistics[0], statistics[1], statistics[2]);
 
+                Miner[] minersOld = miners;
+
+                // Get status of each miner
+                miners = Miner.getMiners(address);
+
+                bool allMinersActive = true;
+
+                foreach (Miner miner in miners)
+                {
+
+                    if (!miner.isMining())
+                    {
+
+                        allMinersActive = false;
+                        break;
+
+                    }
+
+                }
+
+                if (!allMinersActive)
+                {
+                    String minersDown = null;
+
+                    for (int i = 0; i < minersOld.Length; i++)
+                    {
+                        if (!miners[i].isMining() && (miners[i].isMining() != minersOld[i].isMining() || firstRun))
+                        {
+                            if (minersDown == null)
+                            {
+
+                                minersDown = miners[i].getName();
+
+                            }
+                            else
+                            {
+
+                                minersDown += ", " + miners[i].getName();
+
+                            }
+                        }
+                    }
+
+                    if (minersDown != null)
+                    {
+
+                        sendMinerDownNotifications(minersDown);
+
+                    }
+
+                }
+
+                if (firstRun)
+                {
+
+                    firstRun = false;
+
+                }
             }
             
+        }
+
+        public void sendMinerDownNotifications(string minersDown)
+        {
+
+            int count = 0;
+
+            foreach (char c in minersDown)
+            {
+
+                if (c == ',')
+                {
+
+                    count++;
+
+                }
+
+            }
+
+            String title;
+            String message;
+
+            if (count == 0)
+            {
+
+                title = "Miner Down";
+                message = "Dwarfpool miner " + minersDown + " is down.";
+
+            }
+            else if (count == 1)
+            {
+
+                title = "Miners Down";
+                message = "Dwarfpool miners " + minersDown.Substring(0, minersDown.IndexOf(',')) + 
+                    " and " + minersDown.Substring(minersDown.IndexOf(',') + 1) + " are down.";
+
+            }
+            else
+            {
+
+                title = "Miners Down";
+                message = "Dwarfpool miners " + minersDown.Substring(0, minersDown.LastIndexOf(',') + 1) +
+                    " and " + minersDown.Substring(minersDown.LastIndexOf(',') + 1) + " are down.";
+
+            }
+
+            this.ui.showMinerDownNotification(title, message);
+
         }
 
         private bool testConnection()

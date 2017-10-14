@@ -25,6 +25,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
             // Only doing this for debugging purposes; will implement proper cross-thread calls later
             Control.CheckForIllegalCrossThreadCalls = false;
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -150,7 +151,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         public void updateStatistics(double price, double balance, double earnings24Hours)
         {
-            lblPrice.Text = "Current Price: $" + price + " USD";
+            lblPrice.Text = "Current Price: $" + String.Format("{0:F2}", price) + " USD";
             lblBalance.Text = "Current Dwarfpool Balance: " + balance + " ETH";
             lblEarnings.Text = "Earnings in the last 24 hours: " + earnings24Hours + " ETH";
         }
@@ -173,6 +174,13 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             DialogResult result = MessageBox.Show(message, title, buttons, icon);
 
             return result;
+
+        }
+
+        public void showMinerDownNotification(string title, string message)
+        {
+
+            sysTrayIcon.ShowBalloonTip(10000, title, message, ToolTipIcon.Warning);
 
         }
 

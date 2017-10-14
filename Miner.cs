@@ -58,10 +58,22 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             for (int i = 0; i < count; i++)
             {
 
-                string name;
-                bool isActive;
+                string nameCheck;
+                bool isActiveCheck = true;
 
-                name = html.Substring(3, html.IndexOf("</td>") - 3);
+                nameCheck = html.Substring(3, html.IndexOf("</td>") - 3);
+
+                html = html.Substring(html.IndexOf("\">") + 2);
+
+                if (html.Substring(0, 4) == "calc")
+                {
+
+                    isActiveCheck = false;
+
+                }
+
+                miners[i] = new Miner(i + 1, nameCheck, isActiveCheck);
+
                 if (i != count - 1)
                 {
                     html = html.Substring(html.IndexOf((i + 2) + ". "));

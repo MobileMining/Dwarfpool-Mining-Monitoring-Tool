@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.stsStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -46,6 +47,7 @@
             this.lblEarnings = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
             this.lbl0x = new System.Windows.Forms.Label();
+            this.sysTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.stsStrip.SuspendLayout();
             this.grpStatistics.SuspendLayout();
             this.SuspendLayout();
@@ -217,6 +219,12 @@
             this.lbl0x.TabIndex = 12;
             this.lbl0x.Text = "0x";
             // 
+            // sysTrayIcon
+            // 
+            this.sysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("sysTrayIcon.Icon")));
+            this.sysTrayIcon.Text = "Dwarfpool Mining Monitoring Tool";
+            this.sysTrayIcon.Visible = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +278,7 @@
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.TextBox txtWalletAddress;
         private System.Windows.Forms.Label lbl0x;
+        private System.Windows.Forms.NotifyIcon sysTrayIcon;
     }
 }
 
