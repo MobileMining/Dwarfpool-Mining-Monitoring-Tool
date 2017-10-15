@@ -240,7 +240,7 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             {
 
                 title = "Miners Down";
-                message = "Dwarfpool miners " + minersDown.Substring(0, minersDown.IndexOf(',')) + 
+                message = "Dwarfpool miners " + minersDown.Substring(0, minersDown.IndexOf(',')) +
                     " and " + minersDown.Substring(minersDown.IndexOf(',') + 1) + " are down.";
 
             }
@@ -260,6 +260,14 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
                 SMSSender sms = new SMSSender(phone, "Dwarfpool Mining Monitoring Tool: \n\n" + message);
                 sms.send();
+
+            }
+
+            if (email != null)
+            {
+
+                EmailSender emailMessage = new EmailSender();
+                emailMessage.sendEmail(email, title, message);
 
             }
 

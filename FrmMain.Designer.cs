@@ -48,6 +48,7 @@
             this.lblBalance = new System.Windows.Forms.Label();
             this.lbl0x = new System.Windows.Forms.Label();
             this.sysTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblVersion = new System.Windows.Forms.Label();
             this.stsStrip.SuspendLayout();
             this.grpStatistics.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // btnStop
             // 
+            this.btnStop.Enabled = false;
             this.btnStop.Location = new System.Drawing.Point(233, 250);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(127, 23);
@@ -166,7 +168,7 @@
             this.chkEmail.Text = "Send an email to the following email address if one or more miners \r\ngoes offline" +
     ":";
             this.chkEmail.UseVisualStyleBackColor = true;
-            this.chkEmail.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chkEmail.CheckedChanged += new System.EventHandler(this.chkEmail_CheckedChanged);
             // 
             // grpStatistics
             // 
@@ -223,13 +225,22 @@
             // 
             this.sysTrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("sysTrayIcon.Icon")));
             this.sysTrayIcon.Text = "Dwarfpool Mining Monitoring Tool";
-            this.sysTrayIcon.Visible = true;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(9, 255);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(49, 13);
+            this.lblVersion.TabIndex = 13;
+            this.lblVersion.Text = "v0.1.0a1";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 300);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.txtWalletAddress);
             this.Controls.Add(this.lbl0x);
             this.Controls.Add(this.grpStatistics);
@@ -279,6 +290,7 @@
         private System.Windows.Forms.TextBox txtWalletAddress;
         private System.Windows.Forms.Label lbl0x;
         private System.Windows.Forms.NotifyIcon sysTrayIcon;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 
