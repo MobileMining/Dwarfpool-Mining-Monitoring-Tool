@@ -25,3 +25,4 @@ D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring
 D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csproj.CoreCompileInputs.cache
 D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.exe
 D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.pdb
+D:\Users\david\Documents\Visual Studio 2017\Projects\Dwarfpool-Mining-Monitoring-Tool\obj\Debug\Dwarfpool Mining Monitoring Tool.csprojResolveAssemblyReference.cache

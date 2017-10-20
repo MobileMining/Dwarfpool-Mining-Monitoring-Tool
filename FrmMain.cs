@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿/**
+ * -----Dwarfpool Mining Monitoring Tool-----
+ * Class: FrmMain
+ * Description: This class is the main class for
+ * the UI.
+ * 
+ * Author: David Goguen
+ * Email: david.goguen@outlook.com
+ */
+
+using System;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -130,6 +134,9 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         }
 
+        /*
+         * Updates the UI to reflect monitoring starting.
+         */
         public void startMonitoringUI()
         {
 
@@ -149,6 +156,9 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
         }
 
+        /*
+         * Updates the UI to reflect monitoring stopping.
+         */
         public void stopMonitoringUI()
         {
 
@@ -255,6 +265,15 @@ namespace Dwarfpool_Mining_Monitoring_Tool
             {
                 e.Handled = true;
             }
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            // Closes mining thread as the GUI closes if there is one running
+            // Will have to come back and do this in a safer way later
+            monitorThread.Abort();
+
         }
     }
 }

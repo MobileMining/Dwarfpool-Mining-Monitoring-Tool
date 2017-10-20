@@ -260,6 +260,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dwarfpool Mining Monitoring Tool";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.stsStrip.ResumeLayout(false);
             this.stsStrip.PerformLayout();
