@@ -272,7 +272,12 @@ namespace Dwarfpool_Mining_Monitoring_Tool
 
             // Closes mining thread as the GUI closes if there is one running
             // Will have to come back and do this in a safer way later
-            monitorThread.Abort();
+            if (monitorThread != null)
+            {
+
+                monitorThread.Abort();
+
+            }
 
         }
     }
